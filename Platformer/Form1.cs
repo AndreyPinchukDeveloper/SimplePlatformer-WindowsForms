@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Platformer
 {
     public partial class GhostAndOgr : Form
@@ -16,7 +17,7 @@ namespace Platformer
 
         int jumpSpeed;
         int force;
-        int playerSeed = 7;
+        int playerSpeed = 7;
         int score = 0;
 
         int horizontalSpeed = 5;
@@ -38,11 +39,11 @@ namespace Platformer
 
             if (goLeft==true)
             {
-                Player.Left -= playerSeed;
+                Player.Left -= playerSpeed;
             }
             if (goRight == true)
             {
-                Player.Left += playerSeed;
+                Player.Left += playerSpeed;
             }
 
             if (jumping==true&&force<0)
@@ -51,7 +52,7 @@ namespace Platformer
             }
             if (jumping==true)
             {
-                jumpSpeed = -8;
+                jumpSpeed = -32;
                 force -= 1;
             }
             else
@@ -99,7 +100,7 @@ namespace Platformer
                     }
                 }
             }
-            //you need ti write here 5 platforms!
+            //you need to write here 5 platforms!
             horizontal1.Left -= horizontalSpeed;
             if (horizontal1.Left<0|| horizontal1.Left + horizontal1.Width>this.ClientSize.Width)
             {
@@ -110,7 +111,7 @@ namespace Platformer
             {
                 verticalSpeed = -verticalSpeed;
             }
-            //enemys
+            //enemies
             Ghost.Left += ghostSpeed;
             if (Ghost.Left<pictureBox8.Left||Ghost.Left+ Ghost.Width>pictureBox8.Left+pictureBox8.Width)
             {
@@ -147,6 +148,7 @@ namespace Platformer
             if (e.KeyCode == Keys.Left)
             {
                 goLeft = true;
+                Class1.turn(Player);
             }
             if (e.KeyCode == Keys.Right)
             {
@@ -198,7 +200,7 @@ namespace Platformer
             }
 
             Player.Left = 78;
-            Player.Top = 780;
+            Player.Top = 580;
 
             Ghost.Left =301;
             //Ghost.Top =197;
