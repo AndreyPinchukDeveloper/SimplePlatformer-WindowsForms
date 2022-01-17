@@ -20,8 +20,11 @@ namespace Platformer
         int playerSpeed = 7;
         int score = 0;
 
-        int horizontalSpeed = 5;
-        int verticalSpeed = 3;
+        int horizontal1Speed = 5;
+        int horizontal2Speed = 5;
+        int vertical1Speed = 3;
+        int vertical2Speed = 3;
+        int vertical3Speed = 3;
 
         int ghostSpeed = 5;
         int ogrSpeed = 3;
@@ -72,9 +75,13 @@ namespace Platformer
                             force = 0;
                             Player.Top = x.Top - Player.Height;
 
-                            if ((string)x.Name=="horizontal"&&goLeft==false|| (string)x.Name == "horizontal1" && goRight == false)
+                            if ((string)x.Name=="horizontal1"&&goLeft==false|| (string)x.Name == "horizontal1" && goRight == false)
                             {
-                                Player.Left -= horizontalSpeed;//this for you can move with platform, in default version you fall
+                                Player.Left -= horizontal1Speed;//this for you can move with platform, in default version you fall
+                            }
+                            if ((string)x.Name=="horizontal2"&&goLeft==false|| (string)x.Name == "horizontal2" && goRight == false)
+                            {
+                                Player.Left -= horizontal2Speed;//this for you can move with platform, in default version you fall
                             }
 
                         }
@@ -100,18 +107,29 @@ namespace Platformer
                     }
                 }
             }
-            //you need to write here 5 platforms!
-            horizontal1.Left -= horizontalSpeed;
-            if (horizontal1.Left<0|| horizontal1.Left + horizontal1.Width>this.ClientSize.Width)
+            horizontal1.Left -= horizontal1Speed;
+            if (horizontal1.Left<pictureBox8.Left||horizontal1.Right>=pictureBox8.Right)
             {
-                horizontalSpeed = -horizontalSpeed;
+                horizontal1Speed = -horizontal1Speed;
             }
-            vertical1.Top += verticalSpeed;
-            if (vertical1.Top<404||vertical1.Top >603)
+            
+            horizontal2.Left -= horizontal2Speed;
+            if (horizontal2.Left<0|| horizontal2.Left==pictureBox2.Right || horizontal2.Left + horizontal2.Width>this.ClientSize.Width)
             {
-                verticalSpeed = -verticalSpeed;
+                horizontal2Speed = -horizontal2Speed;
             }
-            //enemies
+            
+            vertical1.Top += vertical1Speed;
+            if (vertical1.Top<330||vertical1.Top >448)
+            {
+                vertical1Speed = -vertical1Speed;
+            }
+            
+            vertical2.Top += vertical2Speed;
+            if (vertical2.Top==276||vertical2.Top == 561)
+            {
+                vertical2Speed = -vertical2Speed;
+            }
             Ghost.Left += ghostSpeed;
             if (Ghost.Left<pictureBox8.Left||Ghost.Left+ Ghost.Width>pictureBox8.Left+pictureBox8.Width)
             {
@@ -137,7 +155,7 @@ namespace Platformer
                 isGameOver = true;
                 txtScore.Text = "Score: " + score + Environment.NewLine + "Well done ! Good Luck !";
             }
-            else
+            else if (Player.Bounds.IntersectsWith(topDoor.Bounds))
             {
                 txtScore.Text = "Score: " + score + Environment.NewLine + "You do not have enough money !";
             }
@@ -148,7 +166,7 @@ namespace Platformer
             if (e.KeyCode == Keys.Left)
             {
                 goLeft = true;
-                Class1.turn(Player);
+                
             }
             if (e.KeyCode == Keys.Right)
             {
@@ -199,19 +217,17 @@ namespace Platformer
                 }
             }
 
-            Player.Left = 78;
+            Player.Left = 65;
             Player.Top = 580;
 
             Ghost.Left =301;
-            //Ghost.Top =197;
 
             Ogr.Left =269;
-            //Ogr.Top =481;
 
-            vertical1.Top =490;
-            vertical2.Top =315;
+            vertical1.Top =449;
+            vertical2.Top =276;
             vertical3.Top =197;
-            horizontal1.Left =12;
+            horizontal1.Left =93;
             horizontal2.Left =223;
 
             timer1.Start();

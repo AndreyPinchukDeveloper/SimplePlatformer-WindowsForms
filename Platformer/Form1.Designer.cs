@@ -133,7 +133,7 @@ namespace Platformer
             // 
             this.pictureBox26.BackColor = System.Drawing.SystemColors.Info;
             this.pictureBox26.Image = global::Platformer.Properties.Resources.Coin;
-            this.pictureBox26.Location = new System.Drawing.Point(269, 541);
+            this.pictureBox26.Location = new System.Drawing.Point(204, 541);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(16, 14);
             this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -145,7 +145,7 @@ namespace Platformer
             // 
             this.pictureBox25.BackColor = System.Drawing.SystemColors.Info;
             this.pictureBox25.Image = global::Platformer.Properties.Resources.Coin;
-            this.pictureBox25.Location = new System.Drawing.Point(337, 541);
+            this.pictureBox25.Location = new System.Drawing.Point(257, 541);
             this.pictureBox25.Name = "pictureBox25";
             this.pictureBox25.Size = new System.Drawing.Size(16, 14);
             this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -284,7 +284,7 @@ namespace Platformer
             // Player
             // 
             this.Player.Image = global::Platformer.Properties.Resources.Player2;
-            this.Player.Location = new System.Drawing.Point(78, 580);
+            this.Player.Location = new System.Drawing.Point(65, 580);
             this.Player.Name = "Player";
             this.Player.Size = new System.Drawing.Size(52, 45);
             this.Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -294,7 +294,7 @@ namespace Platformer
             // vertical1
             // 
             this.vertical1.Image = global::Platformer.Properties.Resources.Platform1;
-            this.vertical1.Location = new System.Drawing.Point(365, 490);
+            this.vertical1.Location = new System.Drawing.Point(365, 334);
             this.vertical1.Name = "vertical1";
             this.vertical1.Size = new System.Drawing.Size(59, 29);
             this.vertical1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -311,11 +311,12 @@ namespace Platformer
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 9;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Tag = "platform";
             // 
             // vertical3
             // 
             this.vertical3.Image = global::Platformer.Properties.Resources.Platform1;
-            this.vertical3.Location = new System.Drawing.Point(348, 197);
+            this.vertical3.Location = new System.Drawing.Point(365, 164);
             this.vertical3.Name = "vertical3";
             this.vertical3.Size = new System.Drawing.Size(59, 29);
             this.vertical3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -326,7 +327,7 @@ namespace Platformer
             // vertical2
             // 
             this.vertical2.Image = global::Platformer.Properties.Resources.Platform1;
-            this.vertical2.Location = new System.Drawing.Point(12, 315);
+            this.vertical2.Location = new System.Drawing.Point(12, 552);
             this.vertical2.Name = "vertical2";
             this.vertical2.Size = new System.Drawing.Size(42, 29);
             this.vertical2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -348,7 +349,7 @@ namespace Platformer
             // horizontal1
             // 
             this.horizontal1.Image = global::Platformer.Properties.Resources.Platform1;
-            this.horizontal1.Location = new System.Drawing.Point(12, 400);
+            this.horizontal1.Location = new System.Drawing.Point(93, 395);
             this.horizontal1.Name = "horizontal1";
             this.horizontal1.Size = new System.Drawing.Size(71, 29);
             this.horizontal1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -365,6 +366,7 @@ namespace Platformer
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Tag = "platform";
             // 
             // pictureBox2
             // 
@@ -375,6 +377,7 @@ namespace Platformer
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Tag = "platform";
             // 
             // pictureBox1
             // 
@@ -390,7 +393,7 @@ namespace Platformer
             // pictureBox13
             // 
             this.pictureBox13.Image = global::Platformer.Properties.Resources.ButtonDoor;
-            this.pictureBox13.Location = new System.Drawing.Point(12, 533);
+            this.pictureBox13.Location = new System.Drawing.Point(123, 532);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(60, 93);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -400,7 +403,7 @@ namespace Platformer
             // txtScore
             // 
             this.txtScore.AutoSize = true;
-            this.txtScore.Location = new System.Drawing.Point(337, 13);
+            this.txtScore.Location = new System.Drawing.Point(270, 9);
             this.txtScore.Name = "txtScore";
             this.txtScore.Size = new System.Drawing.Size(47, 13);
             this.txtScore.TabIndex = 34;
